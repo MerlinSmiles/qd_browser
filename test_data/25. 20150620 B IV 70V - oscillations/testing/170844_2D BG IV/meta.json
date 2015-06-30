@@ -1,0 +1,389 @@
+{
+  "register": {
+    "channels": [
+      {
+        "default_name": "magnet/fld_as_amps",
+        "registered_name": "B",
+        "name": "B",
+        "class": "qd.classes.Channel",
+        "instrument": "magnet",
+        "meta": {},
+        "channel_id": "fld_as_amps"
+      },
+      {
+        "default_name": "li1/R",
+        "registered_name": "Iac",
+        "name": "Iac",
+        "class": "qd.classes.Channel",
+        "instrument": "li1",
+        "meta": {},
+        "channel_id": "R"
+      },
+      {
+        "default_name": "keithley/i",
+        "registered_name": "Ibg",
+        "name": "Ibg",
+        "class": "qd.classes.Channel",
+        "instrument": "keithley",
+        "meta": {},
+        "channel_id": "i"
+      },
+      {
+        "default_name": "dmm1/in",
+        "registered_name": "Idc",
+        "name": "Idc",
+        "class": "qd.classes.Channel",
+        "instrument": "dmm1",
+        "meta": {},
+        "channel_id": "in"
+      },
+      {
+        "default_name": "keithley1/i",
+        "registered_name": "Isd",
+        "name": "Isd",
+        "class": "qd.classes.Channel",
+        "instrument": "keithley1",
+        "meta": {},
+        "channel_id": "i"
+      },
+      {
+        "default_name": "li2/R",
+        "registered_name": "Vac",
+        "name": "Vac",
+        "class": "qd.classes.Channel",
+        "instrument": "li2",
+        "meta": {},
+        "channel_id": "R"
+      },
+      {
+        "default_name": "keithley/v",
+        "registered_name": "Vbg",
+        "name": "Vbg",
+        "class": "qd.classes.Channel",
+        "instrument": "keithley",
+        "meta": {},
+        "channel_id": "v"
+      },
+      {
+        "default_name": "dmm2/in",
+        "registered_name": "Vdc",
+        "name": "Vdc",
+        "class": "qd.classes.Channel",
+        "instrument": "dmm2",
+        "meta": {},
+        "channel_id": "in"
+      },
+      {
+        "default_name": "keithley1/v",
+        "registered_name": "Vsd",
+        "name": "Vsd",
+        "class": "qd.classes.Channel",
+        "instrument": "keithley1",
+        "meta": {},
+        "channel_id": "v"
+      },
+      {
+        "default_name": "time/time",
+        "registered_name": "time",
+        "name": "time",
+        "class": "qd.classes.Channel",
+        "instrument": "time",
+        "meta": {},
+        "channel_id": "time"
+      }
+    ],
+    "instruments": [
+      {
+        "model": "Agilent34401A",
+        "registered_name": "dmm1",
+        "name": "dmm1",
+        "config": {"NPLC": "+1.00000000E+00"},
+        "channels": ["in"],
+        "class": "qd.ins.AgilentDMM"
+      },
+      {
+        "model": "Agilent34401A",
+        "registered_name": "dmm2",
+        "name": "dmm2",
+        "config": {"NPLC": "+1.00000000E+00"},
+        "channels": ["in"],
+        "class": "qd.ins.AgilentDMM"
+      },
+      {
+        "model": "Keithley 2600",
+        "registered_name": "keithley",
+        "name": "keithley",
+        "channels": [
+          "i",
+          "v",
+          "r"
+        ],
+        "class": "qd.ins.Keithley2600"
+      },
+      {
+        "model": "Keithley 2600",
+        "registered_name": "keithley1",
+        "name": "keithley1",
+        "channels": [
+          "i",
+          "v",
+          "r"
+        ],
+        "class": "qd.ins.Keithley2600"
+      },
+      {
+        "model": "SR830",
+        "registered_name": "li1",
+        "name": "li1",
+        "config": {
+          "RMOD": "2",
+          "FMOD": "1",
+          "sensitivity": 0.2,
+          "SYNC": "1",
+          "IGND": "0",
+          "SLVL": "0.356",
+          "SENS": "24",
+          "OFSL": "2",
+          "timeconst": 3,
+          "ICPL": "0",
+          "PHAS": "0",
+          "FREQ": "13.258",
+          "ISRC": "0",
+          "ampl": "0.356",
+          "HARM": "1",
+          "OFLT": "11",
+          "RSLP": "0",
+          "ILIN": "0"
+        },
+        "channels": [
+          "X",
+          "Y",
+          "R",
+          "theta",
+          "freq",
+          "display1",
+          "display2",
+          "slvl",
+          "oflt",
+          "ampl",
+          "auxout1",
+          "auxout2",
+          "auxout3",
+          "auxout4"
+        ],
+        "class": "qd.ins.SR830LockIn"
+      },
+      {
+        "model": "SR830",
+        "registered_name": "li2",
+        "name": "li2",
+        "config": {
+          "RMOD": "1",
+          "FMOD": "0",
+          "sensitivity": 0.005,
+          "SYNC": "0",
+          "IGND": "0",
+          "SLVL": "0.004",
+          "SENS": "19",
+          "OFSL": "2",
+          "timeconst": 3,
+          "ICPL": "0",
+          "PHAS": "0",
+          "FREQ": "13.2575",
+          "ISRC": "0",
+          "ampl": "0.004",
+          "HARM": "1",
+          "OFLT": "11",
+          "RSLP": "0",
+          "ILIN": "0"
+        },
+        "channels": [
+          "X",
+          "Y",
+          "R",
+          "theta",
+          "freq",
+          "display1",
+          "display2",
+          "slvl",
+          "oflt",
+          "ampl",
+          "auxout1",
+          "auxout2",
+          "auxout3",
+          "auxout4"
+        ],
+        "class": "qd.ins.SR830LockIn"
+      },
+      {
+        "field": 0.0146,
+        "model": "OxfMagnet1D",
+        "registered_name": "magnet",
+        "name": "magnet",
+        "channels": [
+          "fld",
+          "current",
+          "fld_as_amps"
+        ],
+        "class": "qd.ins.OxfMagnet1D"
+      },
+      {
+        "model": "Time",
+        "registered_name": "time",
+        "name": "time",
+        "channels": ["time"],
+        "class": "qd.ins.Time"
+      },
+      {
+        "control": {
+          "tset": 0.7,
+          "rate": 0.01,
+          "range": 1,
+          "channel": "T6",
+          "ramp": false,
+          "mode": false
+        },
+        "model": "Triton",
+        "registered_name": "triton",
+        "name": "triton",
+        "channels": [
+          "COOL",
+          "MC",
+          "Magnet",
+          "PT1",
+          "PT2",
+          "STIL",
+          "cooling_water",
+          "TSET",
+          "RATE",
+          "RANGE"
+        ],
+        "class": "qd.ins.Triton",
+        "temperatures": {
+          "cooling_water": 18,
+          "STIL": 0.637342,
+          "COOL": 1.40001,
+          "PT1": 53.5126,
+          "PT2": 3.81397,
+          "Magnet": 4.07095,
+          "MC": 0.0305085
+        }
+      }
+    ]
+  },
+  "timestamp": "2015-06-20 17:08:44",
+  "inputs": [
+    "Idc",
+    "Vdc",
+    "time"
+  ],
+  "setup": {
+    "channels": [
+      "Iac",
+      "Vac",
+      "Vbg",
+      "Ibg",
+      "Vsd",
+      "Isd",
+      "Idc",
+      "Vdc",
+      "time",
+      "B"
+    ],
+    "instruments": [
+      "triton",
+      "li1",
+      "li2",
+      "keithley",
+      "keithley1",
+      "dmm1",
+      "dmm2",
+      "time",
+      "magnet"
+    ],
+    "meta": {
+      "DC_divider": 1000,
+      "cAmpTime": 0,
+      "cAmp": -1.0E-8,
+      "vAmp": 102.25,
+      "li_source": "li1",
+      "AC_divider": 10000,
+      "vAmp2": 102.3
+    }
+  },
+  "name": "2D BG IV",
+  "sweeps": [
+    {
+      "alternate": false,
+      "to": 55,
+      "chan": "Vbg",
+      "tolerance": null,
+      "points": 11,
+      "from": 60,
+      "settle": 10
+    },
+    {
+      "alternate": false,
+      "to": 3,
+      "chan": "Vsd",
+      "tolerance": null,
+      "points": 101,
+      "from": -3,
+      "settle": 0
+    }
+  ],
+  "comment": null,
+  "type": "type",
+  "meta": {
+    "plots": [
+      {
+        "title": "",
+        "fignum": 1,
+        "yname": "Vdc_r",
+        "varargin": [],
+        "xname": "Vsd",
+        "type": "1d"
+      },
+      {
+        "title": "",
+        "fignum": 2,
+        "yname": "Idc_r",
+        "varargin": [],
+        "xname": "Vsd",
+        "type": "1d"
+      },
+      {
+        "title": "",
+        "fignum": 3,
+        "yname": "Rdc",
+        "varargin": [],
+        "xname": "Vsd",
+        "type": "1d"
+      },
+      {
+        "title": "",
+        "fignum": 4,
+        "yname": "Vbg",
+        "varargin": [],
+        "xname": "Vsd",
+        "type": "1d"
+      }
+    ],
+    "columns": [
+      "Vbg",
+      "Vsd",
+      "Idc",
+      "Vdc",
+      "time",
+      "Idc_r",
+      "Vdc_r",
+      "Rdc"
+    ],
+    "variables": [
+      "Idc*1e-7",
+      "Vdc/102.25",
+      "(Vdc/102.25)/(Idc*1e-7)"
+    ]
+  },
+  "version": "0.0.1"
+}
