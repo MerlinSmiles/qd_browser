@@ -133,69 +133,45 @@ class PlotFrame(QtGui.QWidget):
         self.DataPlot.clear()
         # self.plotItem = self.DataPlot.getPlotItem()
         pa = self.plotAxes
+
+        an0 = self.ax_name(pa[0])
+        an1 = self.ax_name(pa[1])
+        an2 = self.ax_name(pa[2])
         if self.display_items[self.display_num] == 'Waterfall':
-            g_axis = self.ax_name(pa[0])
-            grouped = self.item.groupby(g_axis)
+            grouped = self.item.groupby(an0)
             colors = np.array(255*color.colors_from_cmap(len(grouped), cmap='gnuplot', start=0.2, stop=0.8))
             colors = colors.astype(int)
-            xax = self.ax_name(pa[1])
-            yax = self.ax_name(pa[2])
             i = -1
             for label, data in grouped:
                 i += 1
                 pen = pg.mkPen(pg.mkColor(colors[i]))
-                x = np.array(data[xax])
-                y = np.array(data[yax])
+                x = np.array(data[an1])
+                y = np.array(data[an2])
                 self.plotItem.plot(x, y, pen= pen)
         elif self.display_items[self.display_num] == '2d plot':
             data = self.item.data
-
-
-            print(pa[0],pa[1],pa[2])
-            x= data.ix[:, pa[0]]
-            y= data.ix[:, pa[1]]
-            z= np.array(data.ix[:, pa[2]])
+            x= data[an0]
+            y= data[an1]
+            z= np.array(data[an2])
 
             # # define grid.
             nx = len(x.unique())
             ny = len(y.unique())
             # print(nx,ny)
             # nx = 512
-            ny = 500
+            # ny = 500
             xi = np.linspace(min(x),max(x),nx)
             yi = np.linspace(min(y),max(y),ny)
             # grid the data.
-
-            # xi = np.arange(0,nx,1)
-            # yi = np.arange(0,ny,1)
-
             grid_z0 = griddata((x, y), z, (xi[None,:], yi[:,None]),method='nearest')
-            # # zi = mlab.griddata(x, y, z, xi, yi, interp='linear')
 
-
-
-
-# pp = ax.pcolormesh(xi,yi,zi,cmap=plt.cm.PuOr_r)#, vmin=0, vmax=300)#YlGnBu),norm=LogNorm()
-
-
-
-
-
-            # values = data.ix[:, pa[2]]
-            # x = data.ix[:, pa[0]]
-            # y = data.ix[:, pa[1]]
-            # nx = min(100,len(x.unique()))*1j
-            # ny = min(100,len(y.unique()))*1j
-            # print(nx,ny)
-            # grid_x, grid_y = np.mgrid[0:1:nx, 0:1:ny]
-            # grid_z0 = griddata((x,y), np.array(values), (grid_x, grid_y), method='nearest')
-            img = pg.ImageItem(grid_z0)
+            img = pg.ImageItem(grid_z0.T)
             self.colorBar.setImageItem(img)
             self.plotItem.addItem(img)
         else:
             data = self.item.data
-            x = data.ix[:, pa[0]]
-            y = data.ix[:, pa[1]]
+            x = data[an0]
+            y = data[an1]
             self.plotItem.plot(x, y)
 
     def ax_name(self, number):
